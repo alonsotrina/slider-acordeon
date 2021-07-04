@@ -1,0 +1,67 @@
+@import "slider";
+@import "mixins";
+
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.acordion {
+    z-index: 11;
+    h2 {
+        text-align:center;
+        a {
+            text-decoration: none;
+            color: black;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            font-size:5.625rem;
+            text-transform: uppercase;
+            -webkit-text-stroke: 2px #ffffff;
+            color: transparent;
+            padding: 0 18.75rem;
+            @include phone {
+                font-size:3.75rem;
+            }
+            &:hover {
+                color: #ffffff;
+                span {
+                    -webkit-text-stroke: 2px red;
+                    color: red;
+                }
+            }
+        }
+
+        &.active {
+            a {
+                color: #ffffff;
+                span {
+                    -webkit-text-stroke: 2px red;
+                    color: red;
+                }
+            }
+        }
+    }
+
+    .accordion__box {
+        transition: 0.3s;
+        height: 0;
+        overflow: hidden;
+        padding: 0 21.875rem;
+        @include phone {
+            padding: 0 17.5rem;
+        }
+
+        .accordion__text {
+            margin: 0;
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            color: #ffffff;
+            opacity: 90%;
+            font-weight: 300;
+            text-align: center;
+        }
+    }
+}
